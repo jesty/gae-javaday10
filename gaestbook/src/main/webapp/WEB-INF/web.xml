@@ -9,14 +9,14 @@
 		<param-value>WEB-INF/application-context.xml</param-value>
 	</context-param>
 
-<filter>
-	<filter-class>org.mortbay.servlet.WelcomeFilter</filter-class>
-	<filter-name>WelcomeFilter</filter-name>
-	<init-param>
-		<param-name>welcome</param-name>
-		<param-value>app/messages</param-value>
-	</init-param>
-</filter>
+	<filter>
+		<filter-class>org.mortbay.servlet.WelcomeFilter</filter-class>
+		<filter-name>WelcomeFilter</filter-name>
+		<init-param>
+			<param-name>welcome</param-name>
+			<param-value>app/messages</param-value>
+		</init-param>
+	</filter>
 
 	<filter-mapping> 
       		<filter-name>WelcomeFilter</filter-name> 
