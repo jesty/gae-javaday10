@@ -1,0 +1,39 @@
+body{
+	background-color: #CCF;
+}
+
+.message{
+	background-color: #EEF;
+	padding: 5px;
+	border: 2px dashed #77F;
+	margin: 10px 0px;
+}
+
+#error{
+	border:1px dashed red;
+	color:red;
+	text-align:center;
+	background: #EEF
+}
+
+#messageFormContainer input[type="text"], #messageFormContainer div, #messageFormContainer textarea{
+	width:100%;
+}
+
+.buttonArea {
+	text-align:right;
+}
+
+#messageFormContainer {
+	border: 2px dashed #77F;
+	margin-bottom:10px;
+	padding:10px;
+}
+
+.footer{
+	font-size: 10pt;
+	border-top: 1px solid #77F;
+	text-align: right;
+	font-style: italic;
+	color: #66F;
+}
