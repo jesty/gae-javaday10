@@ -10,4 +10,8 @@ public interface MessageDao {
 
 	void createMessage(Message message);
 
+	Message confirmMessage(String uuid);
+
+	Message findByUUID(String uuid);
+
 }

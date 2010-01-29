@@ -20,6 +20,7 @@ public class Message {
 	@Column private String name;
 	@Column private Date created;
 	@Column private String uuid;
+	@Column private boolean confirmed;
 		
 	public Message(String text, String email, String name, Date created) {
 		this.text = text;
@@ -73,5 +74,13 @@ public class Message {
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
 	}
+	
+	public void setConfirmed(boolean confirmed) {
+		this.confirmed = confirmed;
+	}
 
+	public boolean isConfirmed() {
+		return confirmed;
+	}
+	
 }
