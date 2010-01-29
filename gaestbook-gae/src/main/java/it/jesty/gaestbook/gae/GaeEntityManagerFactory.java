@@ -6,8 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.springframework.stereotype.Component;
-
 public class GaeEntityManagerFactory implements EntityManagerFactory{
 
 	private static final EntityManagerFactory emfInstance = Persistence.createEntityManagerFactory("transactions-optional");
@@ -38,3 +36,7 @@ public class GaeEntityManagerFactory implements EntityManagerFactory{
 		return emfInstance.isOpen();
 	}
 }
+
+
+
+
