@@ -10,4 +10,6 @@ public interface MessageFacade {
 
 	Collection<Message> listMessages();
 
+	Message conifrmMessage(String uuid);
+
 }
