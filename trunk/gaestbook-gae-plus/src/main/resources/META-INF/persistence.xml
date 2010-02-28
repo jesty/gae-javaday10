@@ -8,6 +8,8 @@
             <property name="datanucleus.NontransactionalRead" value="true"/>
             <property name="datanucleus.NontransactionalWrite" value="true"/>
             <property name="datanucleus.ConnectionURL" value="appengine"/>
+            <!-- to manage transaction via annotation -->
+            <property name="datanucleus.appengine.autoCreateDatastoreTxns" value="false"/>
         </properties>
     </persistence-unit>
 

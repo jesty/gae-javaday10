@@ -43,7 +43,7 @@ public class GaestbookController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/messages/of/{userid}", method= RequestMethod.GET)
+	@RequestMapping(value="/messages/of/{userid}/", method= RequestMethod.GET)
 	public ModelAndView showMessagesOf(@PathVariable String userid){
 		ModelAndView modelAndView = new ModelAndView("messages-list");
 		modelAndView.addObject("messages", this.messageFacade.listMessages(userid));
@@ -69,7 +69,6 @@ public class GaestbookController {
 		if(!error.isEmpty()){
 			result.put("error", error);
 		}else {
-			message.setConfirmed(false);
 			message.setAnonymous(true);
 			this.messageFacade.sendMessage(message);
 			this.messageFacade.queueMail(message);
@@ -87,12 +86,12 @@ public class GaestbookController {
 			User user = this.userService.getUser();
 			message.setName(user.getNickname());
 			message.setEmail(user.getEmail());
-			message.setConfirmed(true);
 			message.setAnonymous(false);
 			message.setUser(user);
+			this.messageFacade.sendMessage(message);
+			this.messageFacade.conifrmMessage(message.getUuid());
 			result.put("status", "Message sent successfully.");
 			result.put("message", message);
-			this.messageFacade.sendMessage(message);
 		}
 		return result;
 	}

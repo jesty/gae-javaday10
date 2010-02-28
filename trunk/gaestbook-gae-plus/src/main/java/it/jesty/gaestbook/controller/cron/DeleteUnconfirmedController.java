@@ -21,7 +21,7 @@ public class DeleteUnconfirmedController {
 	
 	@RequestMapping(value="/cron/deleteunconfirmed")
 	public void deleteunconfirmed(){
-		this.messageFacade.deleteUnconfirmed(DateUtils.addDays(new Date(), -3));
+		this.messageFacade.deleteUnconfirmed(DateUtils.addDays(new Date(), 2));
 	}
 
 }
