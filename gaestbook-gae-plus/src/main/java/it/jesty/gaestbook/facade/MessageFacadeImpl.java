@@ -65,7 +65,6 @@ public class MessageFacadeImpl implements MessageFacade {
 
 	@Override
 	public Collection<Message> listMessages(String userid) {
-		//TODO: cache non funziona!!!
 		if(gaestbookCacheWrapper.containsKey(userid)){
 			return (Collection<Message>) gaestbookCacheWrapper.get(userid);
 		} else {
