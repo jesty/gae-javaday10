@@ -64,7 +64,7 @@ public class MessageJpaDao extends JpaDaoSupport implements MessageDao {
 
 	@Override
 	public Collection<Message> list(String userid) {
-		return getJpaTemplate().find("select m from Message m where m.confirmed = true and m.name = ?1", userid);
+		return getJpaTemplate().find("select m from Message m where m.confirmed = true and m.name = ?1 order by m.created desc", userid);
 	}
 
 }

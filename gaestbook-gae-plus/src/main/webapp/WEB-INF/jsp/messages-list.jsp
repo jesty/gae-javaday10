@@ -16,7 +16,7 @@
 	<div id="login">
 		<c:choose>
 			<c:when test="${userService.logged}">
-				${userService.user.nickname} - <a href="${userService.logoutUrl}">logout</a>
+				<a id="name-list" href="/app/messages/of/${userService.user.nickname}/">${userService.user.nickname}</a> - <a href="${userService.logoutUrl}">logout</a>
 			</c:when>
 			<c:otherwise>
 				<a href="${userService.loginUrl}">login</a>
@@ -59,7 +59,7 @@
 							${item.name} (anonymous user)
 						</c:when>
 						<c:otherwise>
-							<a id="name-list" href="/app/messages/of/${item.name}">${item.name}</a>
+							<a id="name-list" href="/app/messages/of/${item.name}/">${item.name}</a>
 						</c:otherwise>
 					</c:choose>
 				</strong> 
