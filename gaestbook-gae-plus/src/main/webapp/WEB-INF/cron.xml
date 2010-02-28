@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+  <cron>
+    <url>/app/cron/deleteunconfirmed</url>
+    <description>Delete unconfirmed message after three days</description>
+    <schedule>every day 00:00</schedule>
+	<timezone>Europe/Rome</timezone>
+  </cron>
+</cronentries>
