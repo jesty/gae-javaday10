@@ -1,12 +1,38 @@
 body{
-	background-color: #CCF;
+	background: #DFEAF9 url('/images/bg_zee.png') repeat scroll 0 0;
+	font-family:verdana;
+}
+
+
+a{
+	text-decoration: none;
+	color: navy;
+}
+
+a:hover{
+	color:#EEF;
+}
+
+#login {
+	font-size:9pt;
+	padding:3px 10px;
+	text-align: right;
+	color: navy;
+}
+
+#logo img{
+	border: 0px;
+}
+
+#header{
+	text-align: right;
 }
 
 .message{
 	background-color: #EEF;
 	padding: 5px;
-	border: 2px dashed #77F;
 	margin: 10px 0px;
+	
 }
 
 #error{
@@ -16,7 +42,7 @@ body{
 	background: #EEF
 }
 
-#messageFormContainer input[type="text"], #messageFormContainer div, #messageFormContainer textarea{
+#messageFormContainer input[type="text"], #messageFormContainer div, #messageFormContainer textarea, #logo{
 	width:100%;
 }
 
@@ -25,9 +51,13 @@ body{
 }
 
 #messageFormContainer {
-	border: 2px dashed #77F;
 	margin-bottom:10px;
 	padding:10px;
+}
+
+#messageFormContainer, #messages, #header{
+	width:760px;
+	margin: 0px auto -1px auto; 
 }
 
 .footer{

@@ -1,5 +1,6 @@
 package it.jesty.gaestbook.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -8,9 +9,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.google.appengine.api.users.User;
+
 @Entity(name="Message")
-public class Message {
+public class Message implements Serializable {
 	
+	//The class need to be serializable to be saved in cache!
+	private static final long serialVersionUID = -3486079471673437678L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -20,13 +26,17 @@ public class Message {
 	@Column private String name;
 	@Column private Date created;
 	@Column private String uuid;
-	@Column private boolean confirmed;
+	@Column private Boolean confirmed = false;
+	@Column private Boolean anonymous = true;
+	@Column private User user;
+
 		
-	public Message(String text, String email, String name, Date created) {
+	public Message(String text, String email, String name, Date created, Boolean anonymous) {
 		this.text = text;
 		this.email = email;
 		this.name = name;
 		this.created = created;
+		this.anonymous = anonymous;
 	}
 	
 	public Message() {/*NECESSARY!!!*/}
@@ -75,12 +85,28 @@ public class Message {
 		this.uuid = uuid;
 	}
 	
-	public void setConfirmed(boolean confirmed) {
+	public void setConfirmed(Boolean confirmed) {
 		this.confirmed = confirmed;
 	}
 
-	public boolean isConfirmed() {
+	public Boolean isConfirmed() {
 		return confirmed;
+	}
+	
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+	
+	public void setAnonymous(Boolean anonymous) {
+		this.anonymous = anonymous;
+	}
+
+	public Boolean getAnonymous() {
+		return anonymous;
 	}
 	
 }
