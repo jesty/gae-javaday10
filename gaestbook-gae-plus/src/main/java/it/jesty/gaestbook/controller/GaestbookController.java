@@ -6,7 +6,6 @@ import it.jesty.gaestbook.security.GaestbookUserService;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
